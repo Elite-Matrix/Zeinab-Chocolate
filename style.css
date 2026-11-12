@@ -787,24 +787,6 @@
     line-height: 1.7;
   }
 
-  .add {
-    display: grid;
-    width: 34px;
-    height: 34px;
-    border: 1px solid var(--line);
-    color: var(--gold);
-    place-items: center;
-    font-size: 22px;
-    transition: color 0.2s, background 0.2s;
-    border-radius: var(--radius-md);
-    margin-inline-start: auto;
-  }
-
-  .add:hover {
-    color: var(--black);
-    background: var(--gold);
-  }
-
   .collection-footer {
     display: flex;
     align-items: center;
@@ -1263,9 +1245,6 @@
   @media (pointer: coarse) {
     .float-contact {
       display: inline-flex;
-    }
-    body {
-      padding-bottom: calc(44px + var(--space-6) + env(safe-area-inset-bottom, 0));
     }
   }
 
@@ -2029,33 +2008,13 @@ h3 {
 }
 
 .product-details {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
+  display: block;
   min-height: 150px;
 }
 
 .product-details small {
   max-width: none;
   font-size: 14px;
-}
-
-.add {
-  flex: 0 0 auto;
-  width: auto;
-  min-width: 92px;
-  min-height: 44px;
-  height: 44px;
-  padding-inline: 12px;
-  gap: 6px;
-  font-size: 14px;
-}
-
-.add-label {
-  display: inline;
-  font-size: 13px;
-  font-weight: 700;
 }
 
 .gallery-grid {
@@ -2170,7 +2129,7 @@ h3 {
   }
 
   body {
-    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+    padding-bottom: 0;
   }
 
   .product-card:hover,
@@ -2234,7 +2193,6 @@ h3 {
 
 @media (hover: hover) and (pointer: fine) {
   .btn:hover,
-  .add:hover,
   .nav-list a:hover,
   .lightbox-close:hover,
   .lightbox-prev:hover,
@@ -2416,10 +2374,6 @@ h3 {
 }
 
 @media (max-width: 360px) {
-  .logo-text strong {
-    display: none;
-  }
-
   .hero-title {
     font-size: 38px;
   }
@@ -2453,10 +2407,6 @@ h3 {
     height: 30px;
   }
 
-  .add {
-    min-width: 80px;
-    padding-inline: 8px;
-  }
 }
 
 @media (max-height: 600px) {

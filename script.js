@@ -403,21 +403,12 @@ function initCustomCursor() {
   });
 }
 
-/* ===== Order link (WhatsApp if enabled, otherwise phone) ===== */
-function orderLink(message) {
-  if (CONFIG.whatsappEnabled) {
-    return CONFIG.whatsapp + '?text=' + encodeURIComponent(message);
-  }
-  return CONFIG.phoneLink;
-}
-
 /* ===== Product Cards Render ===== */
 function renderProducts() {
   const grid = $('#productGrid');
   if (!grid) return;
 
   grid.innerHTML = CONFIG.products.map((p) => {
-    const url = orderLink('أود طلب: ' + p.title);
     return `
       <article class="product-card${p.id === 'signature' ? ' product-card-featured' : ''}" data-reveal>
         <div class="product-image">
@@ -430,7 +421,6 @@ function renderProducts() {
             <h3>${p.title}</h3>
             <small>${p.desc}</small>
           </div>
-          <a class="add" href="${url}" aria-label="${CONFIG.whatsappEnabled ? 'اطلب ' + p.title + ' عبر واتساب' : 'اتصل بنا لطلب ' + p.title}" role="button"><span aria-hidden="true">+</span><span class="add-label">اطلب الآن</span></a>
         </div>
       </article>
     `;
@@ -643,4 +633,3 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
-
